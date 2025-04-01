@@ -36,5 +36,3 @@ try:
 finally:
     time.sleep(7)
     browser.quit()
-
-    # add to new repozitory
