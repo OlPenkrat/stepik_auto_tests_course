@@ -6,7 +6,6 @@ import unittest
 link1 = "http://suninjuly.github.io/registration1.html"
 link2 = "http://suninjuly.github.io/registration2.html"
 
-
 class TestRegistration(unittest.TestCase):
     def test_fill_form(self, link):
         browser = webdriver.Chrome()
@@ -29,11 +28,13 @@ class TestRegistration(unittest.TestCase):
         return welcome_text
 
     def test_regestration1(self):
-        filled_form = self.test_fill_form(link1)
-        self.assertIn("successfully", filled_form.welcome_text, "Wrong Welcome text")
+        link = "http://suninjuly.github.io/registration1.html"
+        filled_form = self.test_fill_form(link)
+        self.assertEqual("Congratulations! You have successfully registered!", filled_form, "Wrong Welcome text")
     
     def test_registration2(self):
-        filled_form = self.test_fill_form(link2)
+        link = "http://suninjuly.github.io/registration2.html"
+        filled_form = self.test_fill_form(link)
         self.assertIn("successfully", filled_form.welcome_text, "Wrong Welcome text")  
         
 if __name__ == "__main__":
